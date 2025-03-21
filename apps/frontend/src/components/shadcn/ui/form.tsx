@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { Label } from "@/components/shadcn/ui/label";
 import { cn } from "@/lib/shadcn/utils";
 import * as LabelPrimitive from "@radix-ui/react-label";
