@@ -20,7 +20,7 @@ const adsCustomerSlice = createSlice({
   reducers: {
     addAllCustomer: (state, action: PayloadAction<{ customers: string[] }>) => {
       const allCustomers = action.payload.customers.map((customer) =>
-        customer.replace("customers/", "")
+        customer.replace("customers/", ""),
       );
       state.customers = allCustomers;
       setItem(localstorageKey, allCustomers);

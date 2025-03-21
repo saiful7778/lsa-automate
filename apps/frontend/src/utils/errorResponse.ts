@@ -6,7 +6,7 @@ type ValidationError<T extends object> = {
 
 export default function errorResponse<T extends object>(
   err: unknown,
-  callbackError?: (validations: ValidationError<T>) => void
+  callbackError?: (validations: ValidationError<T>) => void,
 ): string | null {
   if (err instanceof AxiosError) {
     if (err.response) {

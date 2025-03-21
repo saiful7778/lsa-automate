@@ -3,13 +3,14 @@ import cors from "cors";
 import express from "express";
 import { rateLimit } from "express-rate-limit";
 import helmet from "helmet";
+import passport from "passport";
 import requestIp from "request-ip";
+import apiRouter from "./apis/api.routes";
 import ApiError from "./helpers/apiError.helper";
 import { apiJsonResponse } from "./helpers/apiResponse.helper";
 import errorHandler from "./middlewares/error.middleware";
 import getEnv from "./utils/getEnv";
 import morganLogger from "./utils/logger/morgan.logger";
-import apiRouter from "./apis/api.routes";
 
 export default function expressServer(): express.Express {
   const app = express();
@@ -17,10 +18,7 @@ export default function expressServer(): express.Express {
   app.use(helmet());
   app.use(
     cors({
-      origin:
-        getEnv("frontend_uris").indexOf(",") > 0
-          ? getEnv("frontend_uris").split(",")
-          : getEnv("frontend_uris"),
+      origin: getEnv("frontend_uri"),
       methods: ["GET", "POST", "PATCH", "DELETE"],
       credentials: true,
       allowedHeaders: ["Content-Type", "Authorization"],
@@ -52,6 +50,7 @@ export default function expressServer(): express.Express {
   app.use(express.urlencoded({ extended: true, limit: "16kb" }));
   app.use(cookieParser());
   app.use(morganLogger);
+  app.use(passport.initialize());
 
   app.get("/", (_req, res) => {
     const response = apiJsonResponse(res);
@@ -59,7 +58,7 @@ export default function expressServer(): express.Express {
     return response(200, "Server is running", null);
   });
 
-  app.use("/api", apiRouter)
+  app.use("/api", apiRouter);
 
   app.use(errorHandler);
 

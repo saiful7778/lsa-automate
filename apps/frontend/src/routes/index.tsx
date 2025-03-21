@@ -1,8 +1,10 @@
 import { Button } from "@/components/shadcn/ui/button";
 import { Card, CardContent } from "@/components/shadcn/ui/card";
+import errorResponse from "@/utils/errorResponse";
 import { useGoogleLogin } from "@react-oauth/google";
 import { createFileRoute } from "@tanstack/react-router";
 import axios from "axios";
+import toast from "react-hot-toast";
 
 export const Route = createFileRoute("/")({
   component: RouteComponent,
@@ -27,7 +29,10 @@ function RouteComponent(): React.JSX.Element {
         );
         console.log(data);
       } catch (err) {
-        console.log(err);
+        const response = errorResponse(err);
+        if (response) {
+          toast.error(response);
+        }
       }
     },
     onError: (err) => {
