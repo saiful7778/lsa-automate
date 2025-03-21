@@ -52,7 +52,6 @@ export default function expressServer(): express.Express {
   app.use(express.urlencoded({ extended: true, limit: "16kb" }));
   app.use(cookieParser());
   app.use(morganLogger);
-  app.disable("x-powered-by");
 
   app.get("/", (_req, res) => {
     const response = apiJsonResponse(res);

@@ -8,8 +8,9 @@ import logger from "./utils/logger/winston.logger";
 
     const port = getEnv("port");
 
+
     app.listen(port, () => {
-      logger.info(`Server is running on port:${port}`);
+      console.log(`Server is running on port:${port}`);
     });
   } catch (err) {
     logger.error(err);

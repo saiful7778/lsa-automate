@@ -11,15 +11,15 @@ const envVars = {
   port: process.env.PORT || 5000,
   frontend_uris: process.env.FRONTEND_URIS,
 
-  google_clientId: process.env.GOOGLE_CLIENT_ID,
-  google_client_secret: process.env.GOOGLE_CLIENT_SECRET,
-  google_callback_url: process.env.GOOGLE_CALLBACK_URL,
-  google_developer_token: process.env.GOOGLE_DEVELOPER_TOKEN,
+  // google_clientId: process.env.GOOGLE_CLIENT_ID,
+  // google_client_secret: process.env.GOOGLE_CLIENT_SECRET,
+  // google_callback_url: process.env.GOOGLE_CALLBACK_URL,
+  // google_developer_token: process.env.GOOGLE_DEVELOPER_TOKEN,
 
-  access_token_secret: process.env.ACCESS_TOKEN_SECRET,
-  access_token_expiry: process.env.ACCESS_TOKEN_EXPIRY,
-  refresh_token_secret: process.env.REFRESH_TOKEN_SECRET,
-  refresh_token_expiry: process.env.REFRESH_TOKEN_EXPIRY,
+  // access_token_secret: process.env.ACCESS_TOKEN_SECRET,
+  // access_token_expiry: process.env.ACCESS_TOKEN_EXPIRY,
+  // refresh_token_secret: process.env.REFRESH_TOKEN_SECRET,
+  // refresh_token_expiry: process.env.REFRESH_TOKEN_EXPIRY,
 };
 
 /**
