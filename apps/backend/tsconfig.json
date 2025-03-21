@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "ES2022", // Use modern ECMAScript features (Node.js 18+ supports ES2022)
+    "module": "CommonJS", // Node.js uses CommonJS modules by default
+    "moduleResolution": "Node", // Use Node.js module resolution
+    "outDir": "./dist", // Output directory for compiled JavaScript files
+    "rootDir": "./src", // Source directory for TypeScript files
+    "strict": true, // Enable all strict type-checking options
+    "esModuleInterop": true, // Allow default imports for CommonJS modules
+    "skipLibCheck": true, // Skip type-checking of declaration files (improves performance)
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing in file names
+
+    /* Linting and Code Quality */
+    "noUnusedLocals": true, // Report errors on unused locals
+    "noUnusedParameters": true, // Report errors on unused parameters
+    "noImplicitReturns": true, // Report errors when not all code paths return a value
+    "noFallthroughCasesInSwitch": true, // Report errors for fallthrough cases in switch statements
+
+    /* Advanced Options */
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Ensure each file can be safely transpiled independently
+    "sourceMap": true, // Generate source maps for debugging
+    "inlineSources": true, // Include source content in source maps
+    "removeComments": false, // Keep comments in the output
+
+    /* Experimental Options */
+    "experimentalDecorators": true, // Enable experimental support for decorators
+    "emitDecoratorMetadata": true // Emit metadata for decorators (useful for libraries like TypeORM)
+  },
+  "include": ["src/**/*"], // Include all files in the src directory
+  "exclude": ["node_modules", "dist", "test"] // Exclude common directories
+}
